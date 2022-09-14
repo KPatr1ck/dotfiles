@@ -1,0 +1,19 @@
+{
+  "configurations": {
+    "<name>: Launch": {
+      "adapter": "debugpy",
+      "filetypes": [ "python" ],
+      "configuration": {
+        "name": "<name>: Launch",
+        "type": "python",
+        "request": "launch",
+        "cwd": "/home/cxj",
+        "python": "/home/cxj/anaconda3/envs/py37/bin/python",
+        "stopOnEntry": true,
+        "console": "externalTerminal",
+        "debugOptions": [],
+        "module": "test_py.run"
+      }
+    }
+  }
+}
