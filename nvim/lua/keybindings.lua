@@ -265,12 +265,9 @@ pluginKeys.cmp = function(cmp)
         -- 下一个
         ['<C-j>'] = cmp.mapping.select_next_item(),
         ['<Down>'] = cmp.mapping.select_next_item(),
+        ['<Tab>'] = cmp.mapping.select_next_item(),
         -- 确认
         ['<CR>'] = cmp.mapping.confirm({
-            select = true,
-            behavior = cmp.ConfirmBehavior.Replace,
-        }),
-        ['<Tab>'] = cmp.mapping.confirm({
             select = true,
             behavior = cmp.ConfirmBehavior.Replace,
         }),
