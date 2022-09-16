@@ -76,6 +76,8 @@ packer.startup({
         use('kylechui/nvim-surround')
         -- vimspector
         use('puremourning/vimspector')
+        -- gitsigns
+        use('lewis6991/gitsigns.nvim')
     end,
     config = {
         -- 并发数限制

@@ -3,3 +3,5 @@ if not status then
     vim.notify('没有找到 floaterm')
     return
 end
+
+floaterm.setup({})

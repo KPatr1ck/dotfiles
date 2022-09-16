@@ -265,12 +265,15 @@ pluginKeys.cmp = function(cmp)
         -- 下一个
         ['<C-j>'] = cmp.mapping.select_next_item(),
         ['<Down>'] = cmp.mapping.select_next_item(),
-        ['<Tab>'] = cmp.mapping.select_next_item(),
-        -- 确认
+        ['<Tab>']  = cmp.mapping.select_next_item(),
         ['<CR>'] = cmp.mapping.confirm({
             select = true,
             behavior = cmp.ConfirmBehavior.Replace,
         }),
+        -- ['<Tab>'] = cmp.mapping.confirm({
+        --     select = true,
+        --     behavior = cmp.ConfirmBehavior.Replace,
+        -- }),
         -- 如果窗口内容太多，可以滚动
         ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
         ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),

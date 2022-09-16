@@ -4,7 +4,8 @@ vim.diagnostic.config({
     -- 在输入模式下也更新提示，设置为 true 也许会影响性能
     update_in_insert = true,
 })
-local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
+-- local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
+local signs = { Error = '', Warn = '', Hint = '', Info = '' }
 -- local signs = { Error = '🔴', Warn = '🟠', Hint = '🔵', Info = '🟢' }
 for type, icon in pairs(signs) do
     local hl = 'DiagnosticSign' .. type
@@ -66,8 +67,7 @@ lspsaga.init_lsp_saga({ -- defaults ...
     saga_winblend = 0,
     move_in_saga = { prev = '<C-p>', next = '<C-n>' },
     max_preview_lines = 10,
-    -- code_action_icon = ' ',
-    -- code_action_icon = '🔵',
+    code_action_icon = '',
     code_action_num_shortcut = true,
     code_action_lightbulb = {
         enable = true,

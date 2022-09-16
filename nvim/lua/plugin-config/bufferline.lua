@@ -18,7 +18,7 @@ bufferline.setup({
         offsets = {
             {
                 filetype = 'neo-tree',
-                text = 'File Explorer',
+                text = 'Explorer',
                 -- text = function()
                 --     return vim.fn.getcwd()
                 -- end,

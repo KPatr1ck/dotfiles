@@ -54,3 +54,6 @@ require('plugin-config.surround')
 
 -- Vimspector
 require('dap.vimspector')
+
+-- gitsigns
+require('plugin-config.gitsigns')

@@ -129,7 +129,6 @@ neo_tree.setup({
     },
     git_status = {
         window = {
-            position = 'float',
             mappings = {
                 ['A'] = 'git_add_all',
                 ['gu'] = 'git_unstage_file',
