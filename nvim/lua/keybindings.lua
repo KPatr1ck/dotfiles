@@ -12,6 +12,9 @@ function table.copy(t)
     return setmetatable(u, getmetatable(t))
 end
 
+-- reload config
+map('n', '<leader><CR>', ':lua ReloadConfig()<CR>', opt)
+
 -- visual模式下缩进代码
 map('v', '<', '<gv', opt)
 map('v', '>', '>gv', opt)
@@ -265,7 +268,7 @@ pluginKeys.cmp = function(cmp)
         -- 下一个
         ['<C-j>'] = cmp.mapping.select_next_item(),
         ['<Down>'] = cmp.mapping.select_next_item(),
-        ['<Tab>']  = cmp.mapping.select_next_item(),
+        ['<Tab>'] = cmp.mapping.select_next_item(),
         ['<CR>'] = cmp.mapping.confirm({
             select = true,
             behavior = cmp.ConfirmBehavior.Replace,

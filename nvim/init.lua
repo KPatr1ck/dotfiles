@@ -1,3 +1,6 @@
+-- Reload lua config
+require('reload')
+
 -- 基础设置
 require('basic')
 
