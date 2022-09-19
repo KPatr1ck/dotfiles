@@ -158,8 +158,8 @@ map('n', '<C-PageDown>', ':BufferLineCycleNext<CR>', opt)
 map('n', '<C-A-h>', ':BufferLineMovePrev<CR>', opt)
 map('n', '<C-A-l>', ':BufferLineMoveNext<CR>', opt)
 -- Tab切换
-map('n', '<C-A-j>', ':tabp<CR>', opt)
-map('n', '<C-A-k>', ':tabn<CR>', opt)
+map('n', '<C-A-k>', ':tabp<CR>', opt)
+map('n', '<C-A-j>', ':tabn<CR>', opt)
 map('n', '<C-A-t>', ':tabnew<CR>', opt)
 -- 关闭
 --"moll/vim-bbye"
