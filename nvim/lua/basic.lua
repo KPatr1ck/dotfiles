@@ -1,3 +1,7 @@
+-- undodir
+vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
+vim.o.undofile = true
+
 -- wsl clipboard
 in_wsl = os.getenv('WSL_DISTRO_NAME') ~= nil
 
