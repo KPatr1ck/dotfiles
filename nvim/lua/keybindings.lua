@@ -13,7 +13,7 @@ function table.copy(t)
 end
 
 -- reload config
-map('n', '<leader><CR>', ':lua ReloadConfig()<CR>', opt)
+map('n', '<leader>R', ':lua ReloadConfig()<CR>', opt)
 
 -- visual模式下缩进代码
 map('v', '<', '<gv', opt)
@@ -109,7 +109,7 @@ pluginKeys.neoTreeList = {
     ['cd'] = 'set_root',
     ['<cr>'] = 'open',
     ['<esc>'] = 'revert_preview',
-    ['<leader>p'] = { 'toggle_preview', config = { use_float = true } },
+    ['<Tab>'] = { 'toggle_preview', config = { use_float = true } },
     ['<leader>w'] = 'open_split',
     ['<leader>wv'] = 'open_vsplit',
     -- ["S"] = "split_with_window_picker",
@@ -151,12 +151,16 @@ pluginKeys.neoTreeList = {
 }
 
 -- bufferline
--- Tab切换
+-- Buffer切换
 map('n', '<Tab>', '<C-^>', opt)
 map('n', '<C-PageUp>', ':BufferLineCyclePrev<CR>', opt)
 map('n', '<C-PageDown>', ':BufferLineCycleNext<CR>', opt)
 map('n', '<C-A-h>', ':BufferLineMovePrev<CR>', opt)
 map('n', '<C-A-l>', ':BufferLineMoveNext<CR>', opt)
+-- Tab切换
+map('n', '<C-A-j>', ':tabp<CR>', opt)
+map('n', '<C-A-k>', ':tabn<CR>', opt)
+map('n', '<C-A-t>', ':tabnew<CR>', opt)
 -- 关闭
 --"moll/vim-bbye"
 -- 关闭当前 buffer See Also: https://github.com/akinsho/bufferline.nvim/issues/513
