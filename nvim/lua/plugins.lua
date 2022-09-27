@@ -32,8 +32,6 @@ packer.startup({
         use('arkav/lualine-lsp-progress')
         -- telescope
         use({ 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } })
-        -- floaterm
-        use('voldikss/vim-floaterm')
         -- dashboard-nvim
         use('glepnir/dashboard-nvim')
         -- project
@@ -78,6 +76,12 @@ packer.startup({
         use('puremourning/vimspector')
         -- gitsigns
         use('lewis6991/gitsigns.nvim')
+        -- floaterm
+        -- use('voldikss/vim-floaterm')
+        -- toggleterm
+        use('akinsho/toggleterm.nvim')
+        -- FTerm
+        use('numToStr/FTerm.nvim')
     end,
     config = {
         -- 并发数限制

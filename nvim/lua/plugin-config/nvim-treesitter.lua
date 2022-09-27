@@ -17,8 +17,10 @@ treesitter.setup({
     incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = '<CR>',
-            node_incremental = '<CR>',
+            -- init_selection = '<CR>',
+            init_selection = '<C-s>',
+            -- node_incremental = '<CR>',
+            node_incremental = '<C-s>',
             node_decremental = '<BS>',
             scope_incremental = '<TAB>',
         },

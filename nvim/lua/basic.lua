@@ -114,3 +114,8 @@ vim.cmd([[
 --     augroup END
 -- ]]
 --
+
+vim.cmd([[
+    autocmd TermEnter term://*toggleterm#*
+          \ tnoremap <silent><C-N> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+]])

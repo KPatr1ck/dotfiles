@@ -16,7 +16,7 @@ require('nightfox').setup({
             operators = 'NONE',
             strings = 'NONE',
             types = 'NONE',
-            variables = 'italic',
+            variables = 'bold',
         },
         inverse = { -- Inverse highlight for different types
             match_paren = false,
