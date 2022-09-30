@@ -152,7 +152,7 @@ pluginKeys.neoTreeList = {
 
 -- bufferline
 -- Buffer切换
-map('n', '<Tab>', '<C-^>', opt)
+-- map('n', '<Tab>', '<C-^>', opt)
 map('n', '<C-PageUp>', ':BufferLineCyclePrev<CR>', opt)
 map('n', '<C-PageDown>', ':BufferLineCycleNext<CR>', opt)
 map('n', '<C-A-h>', ':BufferLineMovePrev<CR>', opt)
@@ -201,6 +201,7 @@ map('i', '<C-N>', '<Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>', opt)
 -- map("n", "<C-n>", "<C-^>", opt)
 -- 查找文件
 map('n', '<C-Insert>', ':Telescope find_files<CR>', opt)
+map('n', '<C-Del>', ':Telescope find_files<CR>', opt)
 -- 全局搜索
 map('n', '<C-A-f>', ':Telescope live_grep<CR>', opt)
 -- Telescope 列表中 插入模式快捷键
