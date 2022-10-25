@@ -47,9 +47,9 @@ map("n", "<A-k>", ":resize -2<CR>", opt)
 
 -- 复制文件路径信息
 -- relative path  (src/foo.txt)
-map("n", "<leader>cP", ':let @+=expand("%")<CR>', opt)
+map("n", "<leader>cp", ':let @+=expand("%")<CR>', opt)
 -- absolute path  (/something/src/foo.txt)
-map("n", "<leader>cp", ':let @+=expand("%:p")<CR>', opt)
+map("n", "<leader>ca", ':let @+=expand("%:p")<CR>', opt)
 -- filename       (foo.txt)
 map("n", "<leader>cf", ':let @+=expand("%:t")<CR>', opt)
 

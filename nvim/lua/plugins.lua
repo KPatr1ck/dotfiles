@@ -62,7 +62,8 @@ packer.startup({
         -- lspsaga
         use('glepnir/lspsaga.nvim')
         -- Lua 增强
-        use('folke/lua-dev.nvim')
+        -- use('folke/lua-dev.nvim')
+        use('folke/neodev.nvim')
         -- 代码格式化
         use('mhartington/formatter.nvim')
         -- Autopairs
