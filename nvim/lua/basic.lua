@@ -119,3 +119,6 @@ vim.cmd([[
     autocmd TermEnter term://*toggleterm#*
           \ tnoremap <silent><C-N> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 ]])
+
+-- vim-python-docstring
+vim.g.doge_doc_standard_python = 'google'

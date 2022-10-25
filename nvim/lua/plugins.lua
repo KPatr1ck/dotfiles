@@ -82,6 +82,8 @@ packer.startup({
         use('akinsho/toggleterm.nvim')
         -- FTerm
         use('numToStr/FTerm.nvim')
+        -- vim-doge
+        use({ 'kkoomen/vim-doge', run = ':call doge#install()' })
     end,
     config = {
         -- 并发数限制
