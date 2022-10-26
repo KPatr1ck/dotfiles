@@ -303,12 +303,6 @@ vim.keymap.set("v", "<C-\\>", function()
     vim.api.nvim_feedkeys(key, "nx", false)
     api.locked("toggle.blockwise")(vim.fn.visualmode())
 end)
--- vim.keymap.set("v", "<C-_>", api.locked("toggle.linewise")(vim.fn.visualmode()))
--- vim.keymap.set("v", "<C-\\>", api.toggle.blockwise(vim.fn.visualmode()))
--- vim.keymap.set('v', '<C-_>', api.locked('toggle.linewise')(vim.fn.visualmode()))
--- vim.keymap.set('v', '<C-\\>', api.locked('toggle.blockwise')(vim.fn.visualmode()))
--- map('v', '<C-_>', ':lua require("Comment.api").locked.toggle_linewise_op(vim.fn.visualmode())<CR>', opt)
--- map('v', '<C-\\>', ':lua require("Comment.api").locked.toggle_blockwise_op(vim.fn.visualmode())<CR>', opt)
 
 -- Vimspector
 pluginKeys.mapVimspector = function()

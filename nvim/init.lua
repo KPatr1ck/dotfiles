@@ -43,7 +43,7 @@ require('lsp.formatter')
 -- indent-blankline
 require('plugin-config.indent-blankline')
 
--- indent-blankline
+-- neo-tree 
 require('plugin-config.neo-tree')
 
 -- autopairs

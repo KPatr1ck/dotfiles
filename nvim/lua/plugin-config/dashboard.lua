@@ -4,6 +4,8 @@ if not status then
     return
 end
 
+db.session_directory = vim.fn.stdpath('cache') .. '/session'
+
 db.custom_footer = {
     '',
     '',
