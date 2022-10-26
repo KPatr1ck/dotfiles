@@ -60,9 +60,3 @@ require('dap.vimspector')
 
 -- gitsigns
 require('plugin-config.gitsigns')
-
--- toggleterm
-require('plugin-config.toggleterm')
-
--- FTerm
--- require('plugin-config.fterm')

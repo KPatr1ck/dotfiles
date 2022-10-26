@@ -176,25 +176,14 @@ map("t", "<Esc>", "<C-\\><C-n>", opt)
 -- map("n", "<leader>tv", ":vsp | terminal<CR>", opt)
 
 -- floaterm
--- map('n', '<leader>t', ':FloatermNew<CR>', opt)
--- map('t', '<leader>t', '<C-\\><C-n>:FloatermNew<CR>', opt)
--- map('t', '<C-PageUp>', ':FloatermPrev<CR>', opt)
--- map('t', '<C-PageUp>', '<C-\\><C-n>:FloatermPrev<CR>', opt)
--- map('t', '<C-PageDown>', ':FloatermNext<CR>', opt)
--- map('t', '<C-PageDown>', '<C-\\><C-n>:FloatermNext<CR>', opt)
--- map('n', '<C-N>', ':FloatermToggle<CR>', opt)
--- map('t', '<C-N>', '<C-\\><C-n>:FloatermToggle<CR>', opt)
-
--- toggleterm
--- " By applying the mappings this way you can pass a count to your
--- " For example: 2<C-t> will open terminal 2
--- " mapping to open a specific window.
-map("n", "<C-N>", '<Cmd>exe v:count1 . "ToggleTerm"<CR>', opt)
-map("i", "<C-N>", '<Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>', opt)
-
--- FTerm
--- map('n', '<C-N>', '<CMD>lua require("FTerm").toggle()<CR>', opt)
--- map('t', '<C-N>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opt)
+map("n", "<leader>t", ":FloatermNew<CR>", opt)
+map("t", "<leader>t", "<C-\\><C-n>:FloatermNew<CR>", opt)
+map("t", "<C-PageUp>", ":FloatermPrev<CR>", opt)
+map("t", "<C-PageUp>", "<C-\\><C-n>:FloatermPrev<CR>", opt)
+map("t", "<C-PageDown>", ":FloatermNext<CR>", opt)
+map("t", "<C-PageDown>", "<C-\\><C-n>:FloatermNext<CR>", opt)
+map("n", "<C-N>", ":FloatermToggle<CR>", opt)
+map("t", "<C-N>", "<C-\\><C-n>:FloatermToggle<CR>", opt)
 
 -- Telescope
 -- map("n", "<C-Insert>", "<C-^>", opt)
@@ -303,10 +292,23 @@ end
 -- 代码注释插件
 -- see ./lua/plugin-config/comment.lua
 local api = require("Comment.api")
+local key = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
 vim.keymap.set("n", "<C-_>", api.toggle.linewise.current, opt)
 vim.keymap.set("n", "<C-\\>", api.toggle.blockwise.current, opt)
-map("v", "<C-_>", ':lua require("Comment.api").locked.toggle_linewise_op(vim.fn.visualmode())<CR>', opt)
-map("v", "<C-\\>", ':lua require("Comment.api").locked.toggle_blockwise_op(vim.fn.visualmode())<CR>', opt)
+vim.keymap.set("v", "<C-_>", function()
+    vim.api.nvim_feedkeys(key, "nx", false)
+    api.locked("toggle.linewise")(vim.fn.visualmode())
+end)
+vim.keymap.set("v", "<C-\\>", function()
+    vim.api.nvim_feedkeys(key, "nx", false)
+    api.locked("toggle.blockwise")(vim.fn.visualmode())
+end)
+-- vim.keymap.set("v", "<C-_>", api.locked("toggle.linewise")(vim.fn.visualmode()))
+-- vim.keymap.set("v", "<C-\\>", api.toggle.blockwise(vim.fn.visualmode()))
+-- vim.keymap.set('v', '<C-_>', api.locked('toggle.linewise')(vim.fn.visualmode()))
+-- vim.keymap.set('v', '<C-\\>', api.locked('toggle.blockwise')(vim.fn.visualmode()))
+-- map('v', '<C-_>', ':lua require("Comment.api").locked.toggle_linewise_op(vim.fn.visualmode())<CR>', opt)
+-- map('v', '<C-\\>', ':lua require("Comment.api").locked.toggle_blockwise_op(vim.fn.visualmode())<CR>', opt)
 
 -- Vimspector
 pluginKeys.mapVimspector = function()

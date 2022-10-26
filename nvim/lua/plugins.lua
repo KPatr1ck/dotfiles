@@ -78,7 +78,7 @@ packer.startup({
         -- gitsigns
         use('lewis6991/gitsigns.nvim')
         -- floaterm
-        -- use('voldikss/vim-floaterm')
+        use('voldikss/vim-floaterm')
         -- toggleterm
         use('akinsho/toggleterm.nvim')
         -- FTerm
