@@ -13,6 +13,7 @@ packer.startup({
         use('sainnhe/edge')
         use('sainnhe/sonokai')
         use('olimorris/onedarkpro.nvim')
+        use({ 'catppuccin/nvim', as = 'catppuccin' })
         -- nvim-tree
         use({ 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' })
         -- nvim-neo-tree
@@ -26,14 +27,17 @@ packer.startup({
             },
         })
         -- bufferline
-        use({ 'akinsho/bufferline.nvim', requires = { 'kyazdani42/nvim-web-devicons', 'moll/vim-bbye' } })
+        use({
+            'akinsho/bufferline.nvim',
+            requires = { 'kyazdani42/nvim-web-devicons', 'moll/vim-bbye' },
+        })
         -- lualine
         use({ 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons' } })
         use('arkav/lualine-lsp-progress')
         -- telescope
         use({ 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } })
         -- dashboard-nvim
-        use('glepnir/dashboard-nvim')
+        use({ 'glepnir/dashboard-nvim', commit = 'f7d623457d6621b25a1292b24e366fae40cb79ab' })
         -- project
         use('ahmedkhalf/project.nvim')
         -- treesitter
@@ -60,7 +64,7 @@ packer.startup({
         -- indent-blankline
         use('lukas-reineke/indent-blankline.nvim')
         -- lspsaga
-        use('glepnir/lspsaga.nvim')
+        use({ 'glepnir/lspsaga.nvim', commit = '70a77453fa7a59078b43a5568397fe56c0e3e06a' })
         -- Lua 增强
         -- use('folke/lua-dev.nvim')
         use('folke/neodev.nvim')
@@ -85,6 +89,32 @@ packer.startup({
         use('numToStr/FTerm.nvim')
         -- vim-doge
         use({ 'kkoomen/vim-doge', run = ':call doge#install()' })
+        -- nvim-notify
+        use('rcarriga/nvim-notify')
+        -- install without yarn or npm
+        use({
+            'iamcco/markdown-preview.nvim',
+            run = function()
+                vim.fn['mkdp#util#install']()
+            end,
+        })
+        -- use({
+        --     'iamcco/markdown-preview.nvim',
+        --     run = 'cd app && npm install',
+        --     setup = function()
+        --         vim.g.mkdp_filetypes = { 'markdown' }
+        --     end,
+        --     ft = { 'markdown' },
+        -- })
+
+        -- wilder
+        -- use({ 'gelguy/wilder.nvim' })
+
+        -- aerial
+        -- use('stevearc/aerial.nvim')
+        use({ 'KPatr1ck/aerial.nvim', branch = 'fix_next_up' })
+        -- symbols-outline
+        use('simrat39/symbols-outline.nvim')
     end,
     config = {
         -- 并发数限制

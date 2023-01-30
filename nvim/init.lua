@@ -43,7 +43,7 @@ require('lsp.formatter')
 -- indent-blankline
 require('plugin-config.indent-blankline')
 
--- neo-tree 
+-- neo-tree
 require('plugin-config.neo-tree')
 
 -- autopairs
@@ -60,3 +60,15 @@ require('dap.vimspector')
 
 -- gitsigns
 require('plugin-config.gitsigns')
+
+-- nvim-notify
+require('plugin-config.nvim-notify')
+
+-- wilder
+require('plugin-config.wilder')
+
+-- aerial
+require('plugin-config.aerial')
+
+-- use symbols-outline
+-- require('plugin-config.symbols-outline')

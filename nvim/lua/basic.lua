@@ -21,11 +21,11 @@ vim.g.floaterm_height = 0.95
 vim.g.encoding = 'UTF-8'
 vim.o.fileencoding = 'utf-8'
 -- jkhl 移动时光标周围保留8行
-vim.o.scrolloff = 8
-vim.o.sidescrolloff = 8
+-- vim.o.scrolloff = 8
+-- vim.o.sidescrolloff = 8
 -- 使用相对行号
 vim.wo.number = true
-vim.wo.relativenumber = false
+vim.wo.relativenumber = true
 -- 高亮所在行
 vim.wo.cursorline = true
 -- 显示左侧图标指示列
@@ -101,10 +101,16 @@ vim.o.pumheight = 10
 vim.o.showtabline = 2
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
 vim.o.showmode = false
+
 -- 打开上次默认位置
-vim.cmd([[
-  autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-]])
+-- vim.cmd([[
+--   autocmd BufReadPost * if @% !~# '\.git[\/\\]COMMIT_EDITMSG$' && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+-- ]])
+
+-- vim.cmd([[
+--    autocmd BufLeave * if !&diff | let b:winview = winsaveview() | endif
+--    autocmd BufEnter * if exists('b:winview') && !&diff | call   winrestview(b:winview) | endif
+-- ]])
 
 -- vim.cmd
 -- [[

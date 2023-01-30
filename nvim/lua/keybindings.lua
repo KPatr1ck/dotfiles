@@ -105,8 +105,8 @@ pluginKeys.neoTreeList = {
         nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
     },
     ["o"] = "open",
-    ["P"] = "navigate_up",
-    ["cd"] = "set_root",
+    -- ['P'] = 'navigate_up',
+    -- ['cd'] = 'set_root',
     ["<cr>"] = "open",
     ["<esc>"] = "revert_preview",
     ["<Tab>"] = { "toggle_preview", config = { use_float = true } },
@@ -121,7 +121,7 @@ pluginKeys.neoTreeList = {
     ["C"] = "close_node",
     ["_"] = "close_all_nodes",
     ["+"] = "expand_all_nodes",
-    ["."] = "toggle_hidden",
+    -- ['.'] = 'toggle_hidden',
     ["a"] = {
         "add",
         -- some commands may take optional config options, see `:h neo-tree-mappings` for details
