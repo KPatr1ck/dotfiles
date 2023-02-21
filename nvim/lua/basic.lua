@@ -14,8 +14,12 @@ if in_wsl then
     }
 end
 -- floaterm
-vim.g.floaterm_width = 0.95
-vim.g.floaterm_height = 0.95
+vim.g.floaterm_wintype = 'float'
+vim.g.floaterm_position = 'bottomright'
+vim.g.floaterm_autoinsert = true
+vim.g.floaterm_title = 'TERM($1/$2)'
+vim.g.floaterm_width = 0.8
+vim.g.floaterm_height = 0.8
 -- vim.g.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 -- utf8
 vim.g.encoding = 'UTF-8'
@@ -57,8 +61,8 @@ vim.o.smartcase = true
 vim.o.hlsearch = false
 -- 边输入边搜索
 vim.o.incsearch = true
--- 命令行高为2，提供足够的显示空间
-vim.o.cmdheight = 1
+-- 命令行高为0
+vim.o.cmdheight = 0
 -- 当文件被外部程序修改时，自动加载
 vim.o.autoread = true
 vim.bo.autoread = true
@@ -90,7 +94,7 @@ vim.o.termguicolors = true
 vim.opt.termguicolors = true
 -- 不可见字符的显示，这里只把空格显示为一个点
 vim.o.list = true
-vim.o.listchars = 'space:·'
+-- vim.o.listchars = 'space:·'
 -- 补全增强
 vim.o.wildmenu = true
 -- Dont' pass messages to |ins-completin menu|
@@ -121,10 +125,10 @@ vim.o.showmode = false
 -- ]]
 --
 
-vim.cmd([[
-    autocmd TermEnter term://*toggleterm#*
-          \ tnoremap <silent><C-N> <Cmd>exe v:count1 . "ToggleTerm"<CR>
-]])
+-- vim.cmd([[
+--     autocmd TermEnter term://*toggleterm#*
+--           \ tnoremap <silent><C-N> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+-- ]])
 
 -- vim-python-docstring
 vim.g.doge_doc_standard_python = 'google'

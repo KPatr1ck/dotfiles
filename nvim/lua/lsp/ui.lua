@@ -2,7 +2,7 @@ vim.diagnostic.config({
     virtual_text = true,
     signs = true,
     -- 在输入模式下也更新提示，设置为 true 也许会影响性能
-    update_in_insert = true,
+    update_in_insert = false,
 })
 -- local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
 local signs = { Error = '', Warn = '', Hint = '', Info = '' }
@@ -79,10 +79,10 @@ local lspsaga = require('lspsaga')
 -- lspsaga.init_lsp_saga({ -- defaults ...
 lspsaga.setup({ -- defaults ...
     ui = {
-        -- theme = 'round',
-        title = false, -- Nvim 0.8 doesn't support window titles
-        winblend = 5,
-        border = 'rounded',
+        theme = 'round',
+        title = true, -- Nvim 0.8 doesn't support window titles
+        winblend = 0,
+        border = 'double',
         colors = nord_colors,
     },
     -- diagnostic_header = { '', '', '', '' },
@@ -93,7 +93,7 @@ lspsaga.setup({ -- defaults ...
     code_action_num_shortcut = true,
     code_action_lightbulb = {
         enable = true,
-        enable_in_insert = true,
+        enable_in_insert = false,
         cache_code_action = true,
         sign = true,
         update_time = 150,

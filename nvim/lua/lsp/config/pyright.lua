@@ -6,6 +6,15 @@ local opts = {
         common.disableFormat(client)
         common.keyAttach(bufnr)
     end,
+    settings = {
+        python = {
+            analysis = {
+                autoSearchPaths = false,
+                useLibraryCodeForTypes = false,
+                diagnosticMode = 'openFilesOnly',
+            },
+        },
+    },
 }
 return {
     on_setup = function(server)

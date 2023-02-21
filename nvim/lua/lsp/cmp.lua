@@ -1,11 +1,31 @@
 local cmp = require('cmp')
 
+local has_words_before = function()
+    unpack = unpack or table.unpack
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
+end
+
 local cmdline_mapping = cmp.mapping.preset.cmdline()
 cmdline_mapping['<CR>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace })
 cmdline_mapping['<Down>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' })
-cmdline_mapping['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' })
+cmdline_mapping['<Tab>'] = cmp.mapping(function(fallback)
+    if cmp.visible() then
+        cmp.select_next_item()
+    elseif has_words_before() then
+        cmp.complete({
+            reason = cmp.ContextReason.Auto,
+        })
+    else
+        fallback()
+    end
+end, { 'i', 'c' })
+-- cmdline_mapping['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' })
 cmdline_mapping['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' })
 cmdline_mapping['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' })
+-- 如果窗口内容太多，可以滚动
+-- cmdline_mapping['<PageDown>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' })
+-- cmdline_mapping['<PageUp>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' })
 
 function dumpvar(data)
     -- cache of tables already printed, to avoid infinite recursive loops
@@ -75,9 +95,7 @@ cmp.setup({
     }, { { name = 'buffer' }, { name = 'path' } }),
 
     -- 快捷键设置
-    -- mapping = require('keybindings').cmp(cmp),
     mapping = cmdline_mapping,
-    -- 使用lspkind-nvim显示类型图标 (新增)
     formatting = require('lsp.ui').formatting,
 })
 

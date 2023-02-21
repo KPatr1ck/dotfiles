@@ -64,11 +64,5 @@ require('plugin-config.gitsigns')
 -- nvim-notify
 require('plugin-config.nvim-notify')
 
--- wilder
-require('plugin-config.wilder')
-
 -- aerial
 require('plugin-config.aerial')
-
--- use symbols-outline
--- require('plugin-config.symbols-outline')

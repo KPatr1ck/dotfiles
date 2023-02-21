@@ -46,7 +46,7 @@ packer.startup({
         --------------------- LSP --------------------
         use('williamboman/nvim-lsp-installer')
         -- Lspconfig
-        use({ 'neovim/nvim-lspconfig' })
+        use({ 'neovim/nvim-lspconfig', commit = 'ee00aa22dc5254432ac4704e6761d2b127e14622' })
         -- 补全引擎
         use('hrsh7th/nvim-cmp')
         -- snippet 引擎
@@ -98,18 +98,6 @@ packer.startup({
                 vim.fn['mkdp#util#install']()
             end,
         })
-        -- use({
-        --     'iamcco/markdown-preview.nvim',
-        --     run = 'cd app && npm install',
-        --     setup = function()
-        --         vim.g.mkdp_filetypes = { 'markdown' }
-        --     end,
-        --     ft = { 'markdown' },
-        -- })
-
-        -- wilder
-        -- use({ 'gelguy/wilder.nvim' })
-
         -- aerial
         -- use('stevearc/aerial.nvim')
         use({ 'KPatr1ck/aerial.nvim', branch = 'fix_next_up' })
