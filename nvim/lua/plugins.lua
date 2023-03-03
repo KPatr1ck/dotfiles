@@ -6,13 +6,13 @@ packer.startup({
         -- Themes
         use('folke/tokyonight.nvim')
         use('shaunsingh/nord.nvim')
-        use('shaunsingh/seoul256.nvim')
         use('EdenEast/nightfox.nvim')
-        use('Yagua/nebulous.nvim')
-        use('ful1e5/onedark.nvim')
-        use('sainnhe/edge')
-        use('sainnhe/sonokai')
-        use('olimorris/onedarkpro.nvim')
+        use('frenzyexists/aquarium-vim')
+        use('Mofiqul/dracula.nvim')
+        use({
+            'rose-pine/neovim',
+            as = 'rose-pine',
+        })
         use({ 'catppuccin/nvim', as = 'catppuccin' })
         -- nvim-tree
         use({ 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' })
@@ -46,7 +46,8 @@ packer.startup({
         --------------------- LSP --------------------
         use('williamboman/nvim-lsp-installer')
         -- Lspconfig
-        use({ 'neovim/nvim-lspconfig', commit = 'ee00aa22dc5254432ac4704e6761d2b127e14622' })
+        -- use({ 'neovim/nvim-lspconfig', commit = 'ee00aa22dc5254432ac4704e6761d2b127e14622' })
+        use({ 'neovim/nvim-lspconfig' })
         -- 补全引擎
         use('hrsh7th/nvim-cmp')
         -- snippet 引擎
@@ -64,7 +65,7 @@ packer.startup({
         -- indent-blankline
         use('lukas-reineke/indent-blankline.nvim')
         -- lspsaga
-        use({ 'glepnir/lspsaga.nvim', commit = '70a77453fa7a59078b43a5568397fe56c0e3e06a' })
+        use({ 'glepnir/lspsaga.nvim' })
         -- Lua 增强
         -- use('folke/lua-dev.nvim')
         use('folke/neodev.nvim')
@@ -103,6 +104,25 @@ packer.startup({
         use({ 'KPatr1ck/aerial.nvim', branch = 'fix_next_up' })
         -- symbols-outline
         use('simrat39/symbols-outline.nvim')
+        -- todo-comments
+        use({ 'folke/todo-comments.nvim', requires = 'nvim-lua/plenary.nvim' })
+        -- noice
+        use({
+            'folke/noice.nvim',
+            requires = {
+                -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+                'MunifTanjim/nui.nvim',
+                -- OPTIONAL:
+                --   `nvim-notify` is only needed, if you want to use the notification view.
+                --   If not available, we use `mini` as the fallback
+                'rcarriga/nvim-notify',
+            },
+        })
+        -- rest.nvim
+        use({
+            'rest-nvim/rest.nvim',
+            requires = { 'nvim-lua/plenary.nvim' },
+        })
     end,
     config = {
         -- 并发数限制

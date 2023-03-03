@@ -66,3 +66,12 @@ require('plugin-config.nvim-notify')
 
 -- aerial
 require('plugin-config.aerial')
+
+-- todo-comments
+require('plugin-config.todo-comments')
+
+-- noice
+require('plugin-config.noice')
+
+-- rest
+require('plugin-config.rest')

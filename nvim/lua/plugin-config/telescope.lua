@@ -17,6 +17,9 @@ telescope.setup({
             -- 查找文件换皮肤，支持的参数有： dropdown, cursor, ivy
             -- theme = "dropdown",
         },
+        colorscheme = {
+            enable_preview = true,
+        },
     },
     extensions = {
         -- 扩展插件配置

@@ -83,6 +83,11 @@ neo_tree.setup({
     },
     nesting_rules = {},
     filesystem = {
+        filtered_items = {
+            visible = true,
+            hide_dotfiles = true,
+            hide_gitignored = true,
+        },
         follow_current_file = true,
         commands = {
             copy_filename = function(state)

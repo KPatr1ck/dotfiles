@@ -22,11 +22,11 @@ require('nightfox').setup({
             conditionals = 'NONE',
             constants = 'NONE',
             functions = 'NONE',
-            keywords = 'italic',
+            keywords = 'NONE',
             numbers = 'NONE',
             operators = 'NONE',
             strings = 'NONE',
-            types = 'bold',
+            types = 'NONE',
             variables = 'NONE',
         },
         inverse = { -- Inverse highlight for different types
@@ -43,12 +43,19 @@ require('nightfox').setup({
     groups = {},
 })
 
+local colorScheme = {}
+
+-- From lighter to darker: dayfox, dawnfox, nordfox, nightfox
+if tonumber(os.date('%H')) <= 12 then
+    colorScheme.name = 'dawnfox'
+else
+    colorScheme.name = 'nordfox'
+end
+
 -- setup must be called before loading
-local colorscheme = 'nordfox'
--- local colorscheme = 'dawnfox'
-local status_ok, _ = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
+local status_ok, _ = pcall(vim.cmd, 'colorscheme ' .. colorScheme.name)
 if not status_ok then
-    vim.notify('colorscheme ' .. colorscheme .. ' 没有找到！')
+    vim.notify('colorscheme ' .. colorScheme.name .. ' 没有找到！')
     return
 end
 
@@ -199,3 +206,5 @@ end
 --     vim.notify('colorscheme ' .. colorscheme .. ' 没有找到！')
 --     return
 -- end
+
+return colorScheme

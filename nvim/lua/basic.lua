@@ -2,8 +2,14 @@
 vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
 vim.o.undofile = true
 
+-- Ignore file edit messages less than N lines.
+vim.o.report = 1000000
+
+-- Disable sub(%s) preview
+vim.o.inccommand = ''
+
 -- wsl clipboard
-in_wsl = os.getenv('WSL_DISTRO_NAME') ~= nil
+local in_wsl = os.getenv('WSL_DISTRO_NAME') ~= nil
 
 if in_wsl then
     vim.g.clipboard = {
@@ -62,7 +68,7 @@ vim.o.hlsearch = false
 -- 边输入边搜索
 vim.o.incsearch = true
 -- 命令行高为0
-vim.o.cmdheight = 0
+vim.o.cmdheight = 1
 -- 当文件被外部程序修改时，自动加载
 vim.o.autoread = true
 vim.bo.autoread = true
